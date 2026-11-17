@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo oficial de soluciones digitales: landing pages, sitios corporativos, sistemas web y plataformas SaaS listas para personalizar." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Catálogo de Productos — Software de Clase Mundial" />
+  <meta property="og:description" content="Explora nuestra colección de soluciones digitales premium: plantillas, sistemas web y plataformas SaaS." />
+  <meta property="og:type" content="website" />
+  <title>Catálogo de Productos · Devlyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #08080E;
+      --bg-2:        #0F0F1A;
+      --surface:     #12121F;
+      --surface-2:   #1A1A2E;
+      --border:      rgba(255,255,255,0.07);
+      --border-hover:rgba(255,255,255,0.15);
+      --text-primary:#F0F0F8;
+      --text-secondary:#8888AA;
+      --text-muted:  #4A4A6A;
+      --accent:      #5B6CF0;
+      --accent-2:    #8B5CF6;
+      --accent-glow: rgba(91,108,240,0.25);
+      --success:     #34D399;
+      --font:        'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm:   8px;
+      --radius-md:   16px;
+      --radius-lg:   24px;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,0.4);
+      --shadow-md:   0 8px 32px rgba(0,0,0,0.5);
+      --shadow-lg:   0 24px 64px rgba(0,0,0,0.6);
+      --transition:  all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent); color: #fff; }
+
+    /* ─── Noise texture overlay ────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── Navigation ───────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(24px, 5vw, 80px);
+      height: 64px;
+      background: rgba(8, 8, 14, 0.7);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .nav.scrolled {
+      background: rgba(8, 8, 14, 0.9);
+      border-bottom-color: rgba(255,255,255,0.1);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-mark svg { width: 14px; height: 14px; }
+
+    .nav-logo-text {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary) !important;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 7px 18px;
+      border-radius: 50px;
+      transition: var(--transition) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--surface) !important;
+      border-color: var(--border-hover) !important;
+    }
+
+    /* ─── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px clamp(24px, 5vw, 80px) 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Ambient glow blobs */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(91,108,240,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(91,108,240,0.1);
+      border: 1px solid rgba(91,108,240,0.25);
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.1s ease forwards;
+    }
+
+    .hero-eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .hero-title {
+      font-size: clamp(44px, 7vw, 96px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      color: var(--text-primary);
+      max-width: 900px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s ease forwards;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.55) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-title .accent-word {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      margin-top: 24px;
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.35s ease forwards;
+    }
+
+    .hero-actions {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s ease forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      padding: 13px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: 0 0 0 0 var(--accent-glow);
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.08);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px var(--accent-glow), 0 0 0 1px rgba(91,108,240,0.4);
+    }
+
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:active { transform: translateY(0px); }
+
+    .btn-primary svg { transition: transform 0.2s; }
+    .btn-primary:hover svg { transform: translateX(3px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      background: transparent;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .btn-ghost:hover { color: var(--text-primary); }
+
+    .hero-stats {
+      margin-top: 80px;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s ease forwards;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-num {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--text-primary);
+    }
+
+    .hero-stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-stats-divider {
+      width: 1px;
+      height: 32px;
+      background: var(--border);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Section: Catalog ─────────────────────────────────────── */
+    .catalog {
+      padding: clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 4.5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--text-primary);
+    }
+
+    .section-subtitle {
+      margin-top: 16px;
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* ─── Category Cards ───────────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    /* Gradient top border accent — the signature element */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--card-accent, var(--accent)), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 2;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, var(--card-glow, rgba(91,108,240,0.06)) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .card:hover::before { opacity: 1; }
+    .card:hover::after  { opacity: 1; }
+
+    /* Individual card accent colors */
+    .card--landing  { --card-accent: #5B6CF0; --card-glow: rgba(91,108,240,0.07); }
+    .card--corp     { --card-accent: #8B5CF6; --card-glow: rgba(139,92,246,0.07); }
+    .card--systems  { --card-accent: #06B6D4; --card-glow: rgba(6,182,212,0.07); }
+    .card--saas     { --card-accent: #F59E0B; --card-glow: rgba(245,158,11,0.07); }
+
+    .card-image-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: var(--bg-2);
+      flex-shrink: 0;
+    }
+
+    .card-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.75;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+      display: block;
+    }
+
+    .card:hover .card-image-wrap img {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* Fallback visual for cards without real images */
+    .card-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--placeholder-bg, linear-gradient(135deg, #0D0D1F 0%, #151530 100%));
+    }
+
+    .card-image-placeholder .grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .card-image-placeholder .illustration {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 3;
+      background: rgba(8,8,14,0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      padding: 5px 12px;
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--badge-color, var(--accent));
+      flex-shrink: 0;
+    }
+
+    .card-badge.soon .card-badge-dot { background: var(--success); }
+
+    .card-body {
+      padding: 28px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      background: var(--icon-bg, rgba(91,108,240,0.12));
+      border: 1px solid var(--icon-border, rgba(91,108,240,0.2));
+      flex-shrink: 0;
+    }
+
+    .card--landing  .card-icon { --icon-bg: rgba(91,108,240,0.12);  --icon-border: rgba(91,108,240,0.2); }
+    .card--corp     .card-icon { --icon-bg: rgba(139,92,246,0.12); --icon-border: rgba(139,92,246,0.2); }
+    .card--systems  .card-icon { --icon-bg: rgba(6,182,212,0.12);  --icon-border: rgba(6,182,212,0.2); }
+    .card--saas     .card-icon { --icon-bg: rgba(245,158,11,0.12); --icon-border: rgba(245,158,11,0.2); }
+
+    .card-name {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 14.5px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .card-footer {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-count {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .card-count strong {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--btn-color, var(--accent));
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: var(--btn-bg, rgba(91,108,240,0.1));
+      border: 1px solid var(--btn-border, rgba(91,108,240,0.2));
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .card--landing  .card-btn { --btn-color: #7B8FFF; --btn-bg: rgba(91,108,240,0.1);  --btn-border: rgba(91,108,240,0.2); }
+    .card--corp     .card-btn { --btn-color: #A78BFA; --btn-bg: rgba(139,92,246,0.1); --btn-border: rgba(139,92,246,0.2); }
+    .card--systems  .card-btn { --btn-color: #22D3EE; --btn-bg: rgba(6,182,212,0.1);  --btn-border: rgba(6,182,212,0.2); }
+    .card--saas     .card-btn { --btn-color: #FCD34D; --btn-bg: rgba(245,158,11,0.1); --btn-border: rgba(245,158,11,0.2); }
+
+    .card-btn svg { transition: transform 0.2s; }
+
+    .card:hover .card-btn {
+      background: var(--btn-bg);
+      filter: brightness(1.2);
+    }
+
+    .card:hover .card-btn svg { transform: translateX(3px); }
+
+    /* SaaS soon overlay */
+    .card--saas .card-image-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(8,8,14,0.35);
+    }
+
+    /* ─── CTA Section ──────────────────────────────────────────── */
+    .cta {
+      padding: clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: clamp(48px, 6vw, 80px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-inner::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(91,108,240,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-inner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.6;
+    }
+
+    .cta-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .cta-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 460px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+    }
+
+    /* ─── Footer ───────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px clamp(24px, 5vw, 80px) 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand-logo .logo-mark {
+      width: 26px;
+      height: 26px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 6px;
+    }
+
+    .footer-brand-logo .logo-text {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 220px;
+      line-height: 1.6;
+    }
+
+    .footer-links-group {
+      display: flex;
+      gap: 64px;
+    }
+
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover { color: var(--text-primary); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover { color: var(--text-secondary); }
+
+    /* ─── Scroll reveal ────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-image-wrap { height: 180px; }
+
+      .footer-top {
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      .footer-links-group { gap: 36px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 28px;
+        justify-content: center;
+      }
+
+      .hero-stats-divider { display: none; }
+
+      .footer-links-group {
+        flex-direction: column;
+        gap: 28px;
+      }
+    }
+
+    /* ─── Reduced motion ───────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ Navigation ══════════════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
+    <ul class="nav-links" role="list">
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#contacto">Cotizaciones</a></li>
+      <li><a href="/sobre-nosotros.html">Nosotros</a></li>
+      <li><a href="#contacto" class="nav-cta">Solicitar Demo</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ Hero ════════════════════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-eyebrow" aria-label="Estado: Catálogo activo">
+      <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+      Catálogo de productos digitales
+    </div>
+
+    <h1 class="hero-title" id="hero-title">
+      <span>Software que impulsa</span><br/>
+      <span class="accent-word">negocios reales</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Soluciones digitales listas para desplegar. Desde tu primera landing page hasta sistemas empresariales a medida.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#catalogo" class="btn-primary" aria-label="Explorar catálogo completo">
+        Explorar Catálogo
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#contacto" class="btn-ghost">
+        Solicitar cotización
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ Catalog Section ═════════════════════════════════════════ -->
+  <section class="catalog" id="catalogo" aria-labelledby="catalog-title">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Soluciones digitales</p>
+      <h2 class="section-title" id="catalog-title">Explora nuestras soluciones</h2>
+    </div>
+
+    <div class="cards-grid" role="list">
+
+      <!-- ── Landing Pages ────────────────────────────────────── -->
+      <article class="card card--landing reveal reveal-delay-1" role="listitem" aria-label="Categoría: Landing Pages">
+        <div class="card-image-wrap">
+          <div class="card-image-placeholder" style="--placeholder-bg: linear-gradient(140deg, #0B0B1E 0%, #131330 100%);">
+            <div class="grid-lines" aria-hidden="true"></div>
+            <div class="illustration" aria-hidden="true">
+              <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="10" width="160" height="100" rx="8" fill="rgba(91,108,240,0.08)" stroke="rgba(91,108,240,0.3)" stroke-width="1"/>
+                <rect x="30" y="22" width="80" height="10" rx="3" fill="rgba(91,108,240,0.5)"/>
+                <rect x="30" y="38" width="120" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+                <rect x="30" y="50" width="100" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+                <rect x="30" y="68" width="52" height="18" rx="9" fill="rgba(91,108,240,0.6)"/>
+                <rect x="110" y="22" width="60" height="70" rx="5" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <rect x="115" y="30" width="50" height="28" rx="3" fill="rgba(91,108,240,0.15)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="card-badge" aria-label="10 plantillas disponibles">
+            <span class="card-badge-dot" style="background:#7B8FFF" aria-hidden="true"></span>
+            10 Plantillas
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-icon" aria-hidden="true">🌐</div>
+          <h3 class="card-name">Landing Pages</h3>
+          <p class="card-desc">
+            Colección de plantillas profesionales listas para personalizar para cualquier tipo de negocio — restaurantes, gimnasios, clínicas y más.
+          </p>
+          <div class="card-footer">
+            <span class="card-count"><strong>10</strong> Plantillas disponibles</span>
+            <a href="landing.html" class="card-btn" aria-label="Explorar colección de Landing Pages">
+              Explorar
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Sitios Corporativos ──────────────────────────────── -->
+      <article class="card card--corp reveal reveal-delay-2" role="listitem" aria-label="Categoría: Sitios Corporativos">
+        <div class="card-image-wrap">
+          <div class="card-image-placeholder" style="--placeholder-bg: linear-gradient(140deg, #0C0B1E 0%, #150F35 100%);">
+            <div class="grid-lines" aria-hidden="true"></div>
+            <div class="illustration" aria-hidden="true">
+              <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="15" width="160" height="90" rx="8" fill="rgba(139,92,246,0.07)" stroke="rgba(139,92,246,0.25)" stroke-width="1"/>
+                <rect x="20" y="15" width="160" height="22" rx="8" fill="rgba(139,92,246,0.12)"/>
+                <rect x="28" y="22" width="40" height="8" rx="3" fill="rgba(139,92,246,0.6)"/>
+                <rect x="110" y="22" width="18" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
+                <rect x="132" y="22" width="18" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
+                <rect x="154" y="22" width="18" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
+                <rect x="30" y="50" width="60" height="40" rx="4" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.2)" stroke-width="1"/>
+                <rect x="98" y="50" width="38" height="18" rx="4" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.2)" stroke-width="1"/>
+                <rect x="98" y="72" width="38" height="18" rx="4" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.2)" stroke-width="1"/>
+                <rect x="140" y="50" width="35" height="40" rx="4" fill="rgba(139,92,246,0.08)" stroke="rgba(139,92,246,0.15)" stroke-width="1"/>
+              </svg>
+            </div>
+          </div>
+          <div class="card-badge" aria-label="5 productos disponibles">
+            <span class="card-badge-dot" style="background:#A78BFA" aria-hidden="true"></span>
+            5 Productos
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-icon" aria-hidden="true">🏢</div>
+          <h3 class="card-name">Sitios Corporativos</h3>
+          <p class="card-desc">
+            Sitios empresariales completos para compañías e instituciones. Presencia digital sólida que refleja la escala de tu organización.
+          </p>
+          <div class="card-footer">
+            <span class="card-count"><strong>5</strong> Productos disponibles</span>
+            <a href="corporativos.html" class="card-btn" aria-label="Explorar Sitios Corporativos">
+              Explorar
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Sistemas Web ─────────────────────────────────────── -->
+      <article class="card card--systems reveal reveal-delay-3" role="listitem" aria-label="Categoría: Sistemas Web">
+        <div class="card-image-wrap">
+          <div class="card-image-placeholder" style="--placeholder-bg: linear-gradient(140deg, #080F18 0%, #0C1A28 100%);">
+            <div class="grid-lines" aria-hidden="true"></div>
+            <div class="illustration" aria-hidden="true">
+              <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="15" y="12" width="48" height="96" rx="5" fill="rgba(6,182,212,0.07)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+                <rect x="20" y="18" width="38" height="5" rx="2" fill="rgba(6,182,212,0.4)"/>
+                <rect x="20" y="28" width="30" height="4" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+                <rect x="20" y="36" width="30" height="4" rx="1.5" fill="rgba(6,182,212,0.25)"/>
+                <rect x="20" y="44" width="30" height="4" rx="1.5" fill="rgba(255,255,255,0.08)"/>
+                <rect x="20" y="52" width="30" height="4" rx="1.5" fill="rgba(255,255,255,0.08)"/>
+                <rect x="68" y="12" width="117" height="56" rx="5" fill="rgba(6,182,212,0.07)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+                <rect x="75" y="20" width="55" height="7" rx="2" fill="rgba(6,182,212,0.3)"/>
+                <rect x="75" y="33" width="102" height="6" rx="2" fill="rgba(255,255,255,0.1)"/>
+                <rect x="75" y="43" width="80" height="6" rx="2" fill="rgba(255,255,255,0.07)"/>
+                <rect x="68" y="74" width="55" height="34" rx="5" fill="rgba(6,182,212,0.07)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+                <rect x="128" y="74" width="57" height="34" rx="5" fill="rgba(6,182,212,0.07)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+                <circle cx="82" cy="89" r="8" fill="rgba(6,182,212,0.2)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+                <rect x="95" y="87" width="25" height="4" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="card-badge" aria-label="8 sistemas disponibles">
+            <span class="card-badge-dot" style="background:#22D3EE" aria-hidden="true"></span>
+            8 Sistemas
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-icon" aria-hidden="true">💻</div>
+          <h3 class="card-name">Sistemas Web</h3>
+          <p class="card-desc">
+            Aplicaciones empresariales para diferentes sectores: inventarios, gestión de clientes, facturación y más. Listos para integrar en tu operación.
+          </p>
+          <div class="card-footer">
+            <span class="card-count"><strong>8</strong> Sistemas disponibles</span>
+            <a href="sistemasweb.html" class="card-btn" aria-label="Explorar Sistemas Web">
+              Explorar
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── SaaS ────────────────────────────────────────────── -->
+      <article class="card card--saas reveal reveal-delay-4" role="listitem" aria-label="Categoría: SaaS - Próximamente">
+        <div class="card-image-wrap">
+          <div class="card-image-placeholder" style="--placeholder-bg: linear-gradient(140deg, #141008 0%, #1F1708 100%);">
+            <div class="grid-lines" aria-hidden="true"></div>
+            <div class="illustration" aria-hidden="true">
+              <svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100" cy="60" rx="50" ry="30" fill="rgba(245,158,11,0.06)" stroke="rgba(245,158,11,0.2)" stroke-width="1" stroke-dasharray="4 3"/>
+                <ellipse cx="100" cy="60" rx="35" ry="21" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+                <circle cx="100" cy="60" r="16" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.5)" stroke-width="1.5"/>
+                <path d="M93 60.5L98 65.5L108 55" stroke="rgba(245,158,11,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="152" cy="34" r="10" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+                <circle cx="48" cy="34" r="10" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+                <circle cx="152" cy="86" r="10" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+                <circle cx="48" cy="86" r="10" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+                <line x1="62" y1="38" x2="86" y2="50" stroke="rgba(245,158,11,0.2)" stroke-width="1" stroke-dasharray="3 2"/>
+                <line x1="138" y1="38" x2="114" y2="50" stroke="rgba(245,158,11,0.2)" stroke-width="1" stroke-dasharray="3 2"/>
+                <line x1="62" y1="82" x2="86" y2="70" stroke="rgba(245,158,11,0.2)" stroke-width="1" stroke-dasharray="3 2"/>
+                <line x1="138" y1="82" x2="114" y2="70" stroke="rgba(245,158,11,0.2)" stroke-width="1" stroke-dasharray="3 2"/>
+              </svg>
+            </div>
+          </div>
+          <div class="card-badge soon" aria-label="Próximamente disponible">
+            <span class="card-badge-dot" aria-hidden="true"></span>
+            Próximamente
+          </div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">SaaS</h3>
+          <p class="card-desc">
+            Plataformas Software as a Service desarrolladas por nuestro equipo. Suscríbete, personaliza y escala sin límites desde el primer día.
+          </p>
+          <div class="card-footer">
+            <span class="card-count" aria-label="Estado: próximamente disponible">Lanzamiento <strong>2025</strong></span>
+            <a href="saas.html" class="card-btn" aria-label="Conocer más sobre nuestros SaaS">
+              Explorar
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ CTA Section ═════════════════════════════════════════════ -->
+  <section class="cta" id="contacto" aria-labelledby="cta-title">
+    <div class="cta-inner reveal">
+      <p class="cta-label">Trabajo a medida</p>
+      <h2 class="cta-title" id="cta-title">¿Tienes un proyecto en mente?</h2>
+      <p class="cta-desc">
+        Cuéntanos tu idea y preparamos una cotización detallada en menos de 24 horas. Sin compromisos.
+      </p>
+      <div class="cta-actions">
+        <a href="mailto:hola@devlyst.co" class="btn-primary" aria-label="Enviar correo para solicitar cotización">
+          Solicitar Cotización
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M2 4l6 5 6-5M2 4h12v9H2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/573168115599" class="btn-outline" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8c0 1.18.32 2.28.87 3.23L1.5 14.5l3.35-.86C5.77 14.17 6.87 14.5 8 14.5c3.59 0 6.5-2.91 6.5-6.5S11.59 1.5 8 1.5z" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M5.5 7.5c.5 1 1.5 2 2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Footer ══════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="footer-brand-logo" aria-label="Devlyst inicio">
+            <div class="logo-mark" aria-hidden="true"></div>
+          </a>
+          <p class="footer-tagline">
+            Soluciones digitales premium para negocios que quieren escalar.
+          </p>
+        </div>
+
+        <nav class="footer-links-group" aria-label="Navegación del footer">
+          <div class="footer-col">
+            <p class="footer-col-title">Catálogo</p>
+            <ul role="list">
+              <li><a href="landing.html">Landing Pages</a></li>
+              <li><a href="corporativos.html">Sitios Corporativos</a></li>
+              <li><a href="sistemasweb.html">Sistemas Web</a></li>
+              <li><a href="saas.html">SaaS</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Empresa</p>
+            <ul role="list">
+              <li><a href="/sobre-nosotros.html">Nosotros</a></li>
+              <li><a href="/portafolio.html">Portafolio</a></li>
+              <li><a href="/blog.html">Blog</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Legal</p>
+            <ul role="list">
+              <li><a href="/privacidad.html">Privacidad</a></li>
+              <li><a href="/terminos.html">Términos</a></li>
+              <li><a href="/cookies.html">Cookies</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Todos los derechos reservados.</p>
+        <nav class="footer-legal" aria-label="Navegación legal">
+          <a href="/privacidad.html">Política de Privacidad</a>
+          <a href="/terminos.html">Términos de Uso</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ JavaScript ══════════════════════════════════════════════ -->
+  <script>
+    // ── Nav scroll state ─────────────────────────────────────────
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── Scroll reveal ────────────────────────────────────────────
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // ── Card click → navigate ────────────────────────────────────
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Only navigate if click wasn't on the inner anchor
+        if (!e.target.closest('a')) {
+          const link = card.querySelector('.card-btn');
+          if (link) {
+            window.location.href = link.getAttribute('href');
+          }
+        }
+      });
+
+      // Keyboard accessibility
+      card.setAttribute('tabindex', '0');
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const link = card.querySelector('.card-btn');
+          if (link) window.location.href = link.getAttribute('href');
+        }
+      });
+    });
+
+    // ── Smooth anchor scroll with offset ────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 80;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ── Subtle card parallax on mouse move (desktop only) ────────
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.transform = `translateY(-4px) rotateX(${-y * 3}deg) rotateY(${x * 3}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
